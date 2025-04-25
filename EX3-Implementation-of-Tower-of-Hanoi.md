@@ -20,6 +20,7 @@ Program to implement Tower of Hanoi
 Developed by: A.LAHARI
 RegisterNumber:  212223230111
 */
+
 #include<stdio.h> 
 void TOH(int n,char x,char y,char z) 
 { 
@@ -45,4 +46,5 @@ TOH(n,'A','B','C');
 
 
 ## Result:
+
 Thus, the C program to implement Tower of Hanoi using recursion is implemented successfully.
