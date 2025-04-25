@@ -1,4 +1,4 @@
-# EX 1c Implementation of Tower of Hanoi
+# EX 1(c) Implementation of Tower of Hanoi
 ## DATE:
 ## AIM:
 To write a C program to implement Tower of Hanoi
