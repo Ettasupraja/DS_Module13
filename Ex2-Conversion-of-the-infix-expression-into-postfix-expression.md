@@ -1,4 +1,4 @@
-# Ex 1b Conversion of the infix expression into postfix expression
+# Ex 1(b) Conversion of the infix expression into postfix expression
 ## DATE:
 ## AIM:
 To write a C program to convert the infix expression into postfix form using stack by following the operator precedence and associative rule.
