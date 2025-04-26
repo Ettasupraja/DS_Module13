@@ -20,7 +20,6 @@ Developed by: ETTA SUPRAJA
 RegisterNumber:  212223220022
 */
 
-```
 char stack[100]; int top = -1; void push(char x)
 {
 stack[++top] = x;
@@ -32,7 +31,7 @@ if(top == -1)
 return -1; else
 return stack[top--];
 }
-
+```
 ## Output:
 
 ![WhatsApp Image 2025-04-26 at 15 31 11_d26e8a3a](https://github.com/user-attachments/assets/af3e47e8-4690-4fe7-ada8-0620ff37dda3)
