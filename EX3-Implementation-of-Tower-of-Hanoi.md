@@ -1,115 +1,50 @@
-# Ex 1(b) Conversion of the infix expression into postfix expression
+# EX 1(c) Implementation of Tower of Hanoi
 ## DATE:
 ## AIM:
-To write a C program to convert the infix expression into postfix form using stack by following the operator precedence and associative rule.
+To write a C program to implement Tower of Hanoi
 
 ## Algorithm
 
-1.  Start the program. 
-2. Initialize a stack and set the top index to -1. 
-3. Define the push() and pop() functions to add and remove elements from the stack. 
-4. Define the priority() function to assign priorities to operators. 
-5. Traverse the expression in the IntoPost() function, handling operands, parentheses, and 
-operators. 
-6. After processing the expression, pop and print any remaining operators from the stack. 
-7. End.
+1.Start the program. 
+2. Check if n is greater than 0. 
+3. Recursively move n-1 disks from source (x) to auxiliary (z) using destination (y). 
+4. Print the move of the n-th disk from source (x) to destination (y). 
+5. Recursively move n-1 disks from auxiliary (z) to destination (y) using source (x). 
+6. The function is called initially with TOH(n, 'A', 'B', 'C') where 'A', 'B', and 'C' are the rods. 
+7. End 
 
 ## Program:
 ```
 /*
-Program to convert the infix expression into postfix expression
+Program to implement Tower of Hanoi
 Developed by: ETTA SUPRAJA
-RegisterNumber: 212223220022 
+RegisterNumber:  212223220022
 */
+
 #include<stdio.h> 
-#include<ctype.h> 
- 
-char stack[100]; 
-int top = -1; 
-void push(char x) 
+void TOH(int n,char x,char y,char z) 
 { 
-stack[++top]=x; 
- 
+if(n>0) 
+{ 
+TOH(n-1,x,z,y); 
+printf("%c to %c",x,y); 
+printf("\n"); 
+TOH(n-1,z,y,x); 
 } 
- 
-char pop() 
-{ 
-if(top==-1) 
-return 0; 
-else 
-return stack[top--]; 
-} 
-int priority(char x) 
-{ 
-if(x=='(') 
-  
-  
-{ 
-return 0; 
-} 
-if(x=='&'||x=='|') 
-{ 
-return 1; 
-} 
-if(x=='+'||x=='-') 
-{ 
-return 2; 
-} 
-if(x=='*'||x=='/'||x=='%') 
-{ 
-return 3; 
-} 
-if(x=='^') 
-{ 
-return 4; 
-} 
-return 0; 
-} 
-char IntoPost(char *exp) 
-{ 
-char *e,x; 
-e=exp; 
-while(*e!='\0') 
-{ 
-if(isalnum(*e)) 
-{ 
-printf("%c ",*e); 
-} 
-else if(*e=='(') 
-{ 
-push(*e); 
-} 
-else if(*e==')') 
-{ 
-while((x=pop())!='(') 
-printf("%c ",x); 
-} 
-else 
-{ 
-while(priority(stack[top])>=priority(*e)) 
-printf("%c ",pop()); 
-push(*e); 
-} 
-e++; 
-} 
-while(top != -1) 
-{ 
-printf("%c ",pop()); 
-}return 0; 
 } 
 int main() 
 { 
-char exp[100]="3%2+4*(A&B)"; 
-IntoPost(exp); 
-return 1; 
+int n=2; 
+TOH(n,'A','B','C'); 
 }
 
 ```
 
 ## Output:
 
-![image](https://github.com/user-attachments/assets/5a733175-dfd5-44b9-8d2e-0d77af36c82b)
+![image](https://github.com/user-attachments/assets/8019d751-2068-48cf-9d65-320a235348e8)
 
 
 ## Result:
-Thus, the C program to convert the infix expression into postfix form using stack by following the operator precedence and associative rule is implemented successfully.
+
+Thus, the C program to implement Tower of Hanoi using recursion is implemented successfully.
